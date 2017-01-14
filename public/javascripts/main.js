@@ -76,6 +76,8 @@ function showItem(idx)
 	
 	if (currentItem.answers.length == 4)
 	{
+		$("#chk_4").prop("checked", false);
+		$("#chk_4").prop("answer", false);
 		$("#item_e").hide();
 	}
 	else
