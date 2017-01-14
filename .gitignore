@@ -9,3 +9,4 @@ target
 /build
 /project/project
 /project/target
+/app/api/exam_mock.json
