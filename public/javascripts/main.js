@@ -59,7 +59,7 @@ function showItem(idx)
 	
 	shuffle(currentItem.answers);
 	
-	$("#question").text(currentItem.Question);
+	$("#question").text((idx + 1)+") " + currentItem.Question);
 	
 	for (var i=0;i<4;i++)
 	{
