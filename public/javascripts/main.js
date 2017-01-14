@@ -31,7 +31,8 @@ function doTest()
 		{
 			right = false;
 		}
-		
+
+		$("#chk_" + i).prop("checked", false);
 	}
 	
 	return right;
@@ -62,7 +63,7 @@ function showItem(idx)
 	
 	for (var i=0;i<4;i++)
 	{
-		$("#chk_" + i).prop("checked", false)
+		$("#chk_" + i).prop("checked", false);
 		$("#text_" + i).text(currentItem.answers[i].text);
 		$("#text_"+i).css("color", "black");
 		$("#chk_" + i).prop("answer", currentItem.answers[i].answer);
@@ -117,6 +118,18 @@ function showResult()
 
 function onLoad()
 {
+	for (var i=0;i<4;i++)
+	{
+		$("#text_" + i).prop("chk_target", "#chk_" + i);
+		$("#text_" + i).click(function() {
+			var target = $(this).prop("chk_target");
+			console.debug(target);
+			var prop = $(target).prop("checked");
+			console.debug(prop);
+			$(target).prop("checked", $(target).prop("checked") == false);
+		});
+	}
+	
 	$("#next").click(function() {
 		if (doTest() == false)
 		{

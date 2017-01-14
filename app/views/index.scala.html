@@ -4,6 +4,7 @@
 <html lang="en">
     <head>
         <title>Exam</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
       	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.js" type="text/javascript"></script>
       	<script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
     </head>
@@ -29,8 +30,8 @@
     			</li>
     		</ul>
     		<br/>
-    		<input type="button" id="test" value="Test"></button>
-    		<input type="button" id="next" value="Next"></button>
+    		<input type="button" id="test" class="button" value="Test"></button>
+    		<input type="button" id="next" class="button" value="Next"></button>
     	</div>
     	<div id="result_div" style="display:none">
     		<h1>Result: <span id="result_passfail"></span></h1>
