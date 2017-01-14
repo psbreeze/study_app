@@ -1891,9 +1891,7 @@
       "C": "0",
       "CText": "PIOPS",
       "D": "0",
-      "DText": "EBS enhanced instance",
-      "Comment": "An Amazon EBS?optimized instance uses an optimized configuration stack and provides additional, dedicated capacity for Amazon EBS I/O. This optimization provides the best performance for your EBS volumes by minimizing contention between Amazon EBS I/O and other traffic from your instance. optimized instances deliver dedicated bandwidth to Amazon EBS, with options between 500 Mbps and 4,000 Mbps, depending on the instance type you use. When attached to an EBS?optimized instance, General Purpose SSD (gp2) volumes are designed to deliver within 10% of their baseline and burst performance 99% of the time in a given year, and Provisioned IOPS SSD (io1) volumes are designed to deliver within 10% of their provisioned performance 99.9% of the time in a given year. ",
-      "Reference": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html"
+      "DText": "EBS enhanced instance"
     },
     {
       "Question": "When a user is launching an instance with EC2; which of the below mentioned options is not available during the instance launch console for a key pair.",
@@ -1904,9 +1902,7 @@
       "C": "0",
       "CText": "Select an existing key pair",
       "D": "0",
-      "DText": "Create a new key pair",
-      "Comment": "Upload a new key pair is not valid.\\n\\n After the \"Review Instance Launch page\" when you \"choose Launch\", you are prompted for key pair with the below options\\n\\n 1.Choose an existing key pair, you canselect the key pair that you created when getting set up.\\n\\n2. Create a new key pair. Select Create a new key pair, enter a name for the key pair, and then choose Download Key Pair. This is the only chance for you to save the private key file, so be sure to download it. Save the private key file in a safe place. You'll need to provide the name of your key pair when you launch an instance and the corresponding private key each time you connect to the instance.\\n\\n3.Proceed without a key pair. \\nCaution Don't select the Proceed without a key pair option. If you launch your instance without a key pair, then you can't connect to it.",
-      "Reference": "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html"
+      "DText": "Create a new key pair"
     },
     {
       "Question": "A user is accessing an instance on the SSH port for IP 10.20.30.40. Which is a secure way to configure that the instance can be accessed only from this IP?",
@@ -1917,9 +1913,7 @@
       "C": "0",
       "CText": "In the security group; open port 22 for IP 10.20.30.40/24",
       "D": "0",
-      "DText": "In the security group; open port 22 for IP 10.20.30.40",
-      "Comment": "Configure the security group appropriately. Please remember that ssh port is 22. \\n\\n A security group acts as a virtual firewall to control the traffic for its associated instances. To use a security group, you add the inbound rules to control incoming traffic to the instance, and outbound rules to control the outgoing traffic from your instance. To associate a security group with an instance, you specify the security group when you launch the instance. If you add and remove rules from the security group, we apply those changes to the instances associated with the security group automatically.\\n\\nYour VPC comes with a default security group. Any instance not associated with another security group during launch is associated with the default security group. In this exercise, you'll create a new security group, WebServerSG, and specify this security group when you launch an instance into your VPC.\\n\\n\\n\\nDefault ports\\n\\n80-HTTP (Web connectivity)\\n443-HTTPS (Web with SSL/TLS connectivity)\\n22-SSH (connectivity from Linux/unix)\\n3389-RDP(connectivity from Windows)",
-      "Reference": "http://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/getting-started-create-security-group.html"
+      "DText": "In the security group; open port 22 for IP 10.20.30.40"
     },
     {
       "Question": "You need to audit the list of API calls and events in your account. How can you do it.",
@@ -1930,9 +1924,7 @@
       "C": "0",
       "CText": "API watch",
       "D": "0",
-      "DText": "Event and API watchdog",
-      "Comment": "You can use AWS CloudTrail to get a history of AWS API calls and related events for your account. This includes calls made by using the AWS Management Console, AWS SDKs, command line tools, and higher-level AWS services.",
-      "Reference": "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+      "DText": "Event and API watchdog"
     },
     {
       "Question": "A user is trying to share a video file with all his friends. Which of the below mentioned AWS services will be cheapest and easy to use?",
@@ -1943,9 +1935,7 @@
       "C": "0",
       "CText": "AWS Glacier",
       "D": "0",
-      "DText": "AWS EC2",
-      "Comment": "Reduced Redundancy Storage (RRS) is a new storage option within Amazon S3 that enables customers to reduce their costs by storing non-critical, reproducible data at lower levels of redundancy than Amazon S3? standard storage. It provides a cost-effective, highly available solution for distributing or sharing content that is durably stored elsewhere, or for storing thumbnails, transcoded media, or other processed data that can be easily reproduced. Amazon S3?standard and reduced redundancy options both store data in multiple facilities and on multiple devices, but with RRS, data is replicated fewer times, so the cost is less. Amazon S3 standard storage is designed to provide 99.999999999% durability and to sustain the concurrent loss of data in two facilities, while RRS is designed to provide 99.99% durability and to sustain the loss of data in a single facility. Both the standard and RRS storage options are designed to be highly available, and both are backed by Amazon S3?Service Level Agreement.",
-      "Reference": "https://aws.amazon.com/about-aws/whats-new/2010/05/19/announcing-amazon-s3-reduced-redundancy-storage/"
+      "DText": "AWS EC2"
     },
     {
       "Question": "What is AWS Glacier?",
@@ -1956,9 +1946,105 @@
       "C": "0",
       "CText": "Data Storage for frequently accessed Objects",
       "D": "0",
-      "DText": "Caching Service",
-      "Comment": "Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and flexible storage for data backup and archival. With Amazon Glacier, customers can reliably store their data for as little as $0.007 per gigabyte per month. Amazon Glacier enables customers to offload the administrative burdens of operating and scaling storage to AWS, so that they don? have to worry about capacity planning, hardware provisioning, data replication, hardware failure detection and repair, or time-consuming hardware migrations.",
-      "Reference": "https://aws.amazon.com/glacier/faqs/"
+      "DText": "Caching Service"
+    },
+    {
+      "Question": "Amazon Glacier는 무엇을 위해 설계되었습니까? (정답 2개)",
+      "A": "0",
+      "AText": "활성 데이터베이스 스토리지",
+      "B": "1",
+      "BText": "자주 액세스하지 않는 데이터",
+      "C": "1",
+      "CText": "데이터 아카이브",
+      "D": "0",
+      "DText": "자주 액세스하는 데이터",
+      "E": "0",
+      "EText": "세션 데이터 캐싱"
+    },
+    {
+      "Question": "웹 애플리케이션 프런트 엔드가 Elastic Load Balancer 뒤에 복수의 EC2 인스턴스로 구성되어 있습니다. 그리고 이러한 EC2 인스턴스의 정상 동작 체크를 수행하도록 ELB를 구성했습니다. 한 인스턴스가 정상 동작 체크를 통과하지 못하는 경우 다음 중 올바른 설명은 무엇입니까?",
+      "A": "0",
+      "AText": "ELB가 자동으로 인스턴스를 교체합니다.",
+      "B": "0",
+      "BText": "ELB가 자동으로 해당 인스턴스를 종료합니다.",
+      "C": "1",
+      "CText": "ELB는 정상 동작 체크에 실패한 인스턴스로의 트래픽 전송을 중단합니다.",
+      "D": "0",
+      "DText": "ELB가 근본 원인 분석을 위해 해당 인스턴스를 격리합니다."
+    },
+    {
+      "Question": "재해 복구(DR) 시나리오에서 RDS의 어떤 기능이 가장 낮은 복구 비용을 제공합니까?",
+      "A": "0",
+      "AText": "RDS 멀티-AZ",
+      "B": "0",
+      "BText": "RDS 읽기-복제",
+      "C": "1",
+      "CText": "RDS DB 스냅샷",
+      "D": "0",
+      "DText": "RDS 프로비저닝된 IOPS",
+      "E": "0",
+      "EText": "RDS Import/Export"
+    },
+    {
+      "Question": "기밀 정보인 교육 동영상을 직원에게 배포하는 시스템을 구축하고 있습니다. CloudFront를 사용하여 S3에 저장된 콘텐츠를 제공하지만, S3에 직접적인 퍼블릭 액세스는 불가능하도록 하려면 어떤 방법을 사용해야 합니까?",
+      "A": "1",
+      "AText": "CloudFront에 대한 원본 액세스 ID(OAI)를 생성한 다음 해당 OAI에 S3 버킷에 있는 객체에 대한 액세스 권한을 부여합니다.",
+      "B": "0",
+      "BText": "CloudFront 계정 보안 그룹 amazon-cf/amazon-cf-sg를 적절한 S3 버킷 정책에 추가합니다.",
+      "C": "0",
+      "CText": "CloudFront에 대한 Identity and Access Management(IAM) 사용자를 생성한 다음 해당 IAM 사용자에게 S3 버킷에 있는 객체에 대한 액세스 권한을 부여합니다.",
+      "D": "0",
+      "DText": "CloudFront 배포 ID는 보안 주체로, 대상 버킷은 Amazon Resource Name(ARN)으로 나열하는 S3 버킷 정책을 생성합니다."
+    },
+    {
+      "Question": "다음 중 VPC(Virtual Private Cloud)에서 Elastic IP가 부여된 EC2 인스턴스가 중지되고 다시 시작될 때 발생하는 상황은 무엇입니까? (정답 2개)",
+      "A": "0",
+      "AText": "Elastic IP와 인스턴스의 연결이 해제됩니다.",
+      "B": "1",
+      "BText": "인스턴스-스토어 디바이스에 있는 모든 데이터가 손실됩니다.",
+      "C": "0",
+      "CText": "EBS(Elastic Block Store) 디바이스에 있는 모든 데이터가 손실됩니다.",
+      "D": "0",
+      "DText": "ENI(Elastic Network Interface)가 분리됩니다.",
+      "E": "1",
+      "EText": "인스턴스의 기본 호스트가 변경됩니다."
+    },
+    {
+      "Question": "EC2의 기본 모니터링 패키지에서 Amazon CloudWatch는 다음과 같은 메트릭을 제공합니다.",
+      "A": "0",
+      "AText": "실패한 트랜잭션 요청 수 등의 웹 서버 가시적 메트릭",
+      "B": "0",
+      "BText": "메모리 사용량 등의 운영 체제 가시적 메트릭",
+      "C": "0",
+      "CText": "연결 수 등의 데이터베이스 가시적 메트릭",
+      "D": "1",
+      "DText": "CPU 사용량 등의 하이퍼바이저 가시적 메트릭"
+    },
+    {
+      "Question": "다음 중 AWS에서 데이터 보안을 위해 수행하는 운영 프로세스는 무엇입니까?",
+      "A": "0",
+      "AText": "공유 스토리지 디바이스에 저장된 데이터의 AES-256 암호화",
+      "B": "1",
+      "BText": "업계 표준 방식을 사용하는 스토리지 디바이스 폐기",
+      "C": "0",
+      "CText": "EBS 볼륨 및 EBS 스냅샷의 백그라운드 바이러스 검사",
+      "D": "0",
+      "DText": "여러 AWS 지역 간의 데이터 복제",
+      "E": "0",
+      "EText": "EBS 볼륨이 마운트 해제될 때, EBS 데이터의 안전한 삭제"
+    },
+    {
+      "Question": "S3 데이터를 실수로 삭제하고 덮어쓰는 것을 방지하기 위해서는",
+      "A": "1",
+      "AText": "버킷에서 S3 버전 관리를 사용해야 합니다.",
+      "B": "0",
+      "BText": "서명된 URL만 사용하여 S3 데이터에 액세스해야 합니다.",
+      "C": "0",
+      "CText": "IAM 버킷 정책을 사용하여 S3 삭제가 불가능하도록 해야 합니다.",
+      "D": "0",
+      "DText": "S3 Reduced Redundancy Storage를 사용하도록 설정해야 합니다.",
+      "E": "0",
+      "EText": "Multi-Factor Authentication(MFA) 보호 액세스를 사용하도록 설정해야 합니다."
     }
   ]
 }

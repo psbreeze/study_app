@@ -4,6 +4,7 @@ import javax.inject._
 import play.api._
 import play.api.mvc._
 import scala.io._
+import java.nio.charset._
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -23,7 +24,12 @@ class ExamController @Inject() extends Controller {
     {
       println("ExamController.Index: " + request)
       var mockJson = "./app/api/exam_mock.json"
-      val source = scala.io.Source.fromFile(mockJson)
+      
+      implicit val codec = scala.io.Codec("UTF-8")
+      codec.onMalformedInput(CodingErrorAction.REPLACE)
+      codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
+
+      val source = Source.fromFile(mockJson)
       val lines = try source.mkString finally source.close()
 
       Ok(lines)

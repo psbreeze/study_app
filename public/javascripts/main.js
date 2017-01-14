@@ -18,7 +18,7 @@ function doTest()
 {
 	var right = true;
 	
-	for (var i=0;i<4;i++)
+	for (var i=0;i<5;i++)
 	{
 		var chk = $("#chk_" + i);
 		
@@ -57,16 +57,30 @@ function showItem(idx)
 		{'text': item.DText, 'answer': item.D == "0" ? false : true},
 	];
 	
+	if (item.EText)
+	{
+		currentItem.answers.push({'text': item.EText, 'answer': item.E == "0" ? false : true});
+	}
+	
 	shuffle(currentItem.answers);
 	
 	$("#question").text((idx + 1)+") " + currentItem.Question);
 	
-	for (var i=0;i<4;i++)
+	for (var i=0;i<currentItem.answers.length;i++)
 	{
 		$("#chk_" + i).prop("checked", false);
 		$("#text_" + i).text(currentItem.answers[i].text);
 		$("#text_"+i).css("color", "black");
 		$("#chk_" + i).prop("answer", currentItem.answers[i].answer);
+	}
+	
+	if (currentItem.answers.length == 4)
+	{
+		$("#item_e").hide();
+	}
+	else
+	{
+		$("#item_e").show();
 	}
 	
 	currentIdx = idx;
@@ -118,7 +132,7 @@ function showResult()
 
 function onLoad()
 {
-	for (var i=0;i<4;i++)
+	for (var i=0;i<5;i++)
 	{
 		$("#text_" + i).prop("chk_target", "#chk_" + i);
 		$("#text_" + i).click(function() {
