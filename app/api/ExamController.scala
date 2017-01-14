@@ -3,6 +3,7 @@ package api.exam
 import javax.inject._
 import play.api._
 import play.api.mvc._
+import scala.io._
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -20,8 +21,12 @@ class ExamController @Inject() extends Controller {
    */
   def index = Action { implicit request => 
     {
-      println("ExamController.Index: " + request);
-      Ok("{'a':'a'}")
+      println("ExamController.Index: " + request)
+      var mockJson = "./app/api/exam_mock.json"
+      val source = scala.io.Source.fromFile(mockJson)
+      val lines = try source.mkString finally source.close()
+
+      Ok(lines)
     }
   }
 }
