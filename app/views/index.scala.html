@@ -8,7 +8,35 @@
       	<script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
     </head>
     <body>
-    	<h1>hihihiddddd</hi>
+    	<div id="main_div">
+    		<h1 id="question"></h1>
+    		<ul>
+    			<li>
+    				<input type="checkbox" id="chk_0"/>
+    				<span id="text_0"/>
+    			</li>
+    			<li>
+    				<input type="checkbox" id="chk_1"/>
+    				<span id="text_1"/>
+    			</li>
+    			<li>
+    				<input type="checkbox" id="chk_2"/>
+    				<span id="text_2"/>
+    			</li>
+    			<li>
+    				<input type="checkbox" id="chk_3"/>
+    				<span id="text_3"/>
+    			</li>
+    		</ul>
+    		<br/>
+    		<input type="button" id="test" value="Test"></button>
+    		<input type="button" id="next" value="Next"></button>
+    	</div>
+    	<div id="result_div" style="display:none">
+    		<h1>Result: <span id="result_passfail"></span></h1>
+    		<h2 id="result_correct">Correct: 0</h2>
+    		<h2 id="result_wrong">Wrong: 0</h2>
+    	</div>
     </body>
     
     <script>onLoad();</script>
