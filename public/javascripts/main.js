@@ -91,6 +91,9 @@ function showItem(idx)
 	}
 	else if (currentItem.answers.length == 5)
 	{
+		$("#chk_5").prop("checked", false);
+		$("#chk_5").prop("answer", false);
+		
 		$("#item_4").show();
 		$("#item_5").hide();
 	}
