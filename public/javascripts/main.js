@@ -18,7 +18,7 @@ function doTest()
 {
 	var right = true;
 	
-	for (var i=0;i<5;i++)
+	for (var i=0;i<6;i++)
 	{
 		var chk = $("#chk_" + i);
 		
@@ -62,6 +62,11 @@ function showItem(idx)
 		currentItem.answers.push({'text': item.EText, 'answer': item.E == "0" ? false : true});
 	}
 	
+	if (item.FText)
+	{
+		currentItem.answers.push({'text': item.FText, 'answer': item.F == "0" ? false : true});
+	}
+	
 	shuffle(currentItem.answers);
 	
 	$("#question").text((idx + 1)+") " + currentItem.Question);
@@ -78,11 +83,21 @@ function showItem(idx)
 	{
 		$("#chk_4").prop("checked", false);
 		$("#chk_4").prop("answer", false);
-		$("#item_e").hide();
+		$("#chk_5").prop("checked", false);
+		$("#chk_5").prop("answer", false);
+		
+		$("#item_4").hide();
+		$("#item_5").hide();
+	}
+	else if (currentItem.answers.length == 5)
+	{
+		$("#item_4").show();
+		$("#item_5").hide();
 	}
 	else
 	{
-		$("#item_e").show();
+		$("#item_4").show();
+		$("#item_5").show();
 	}
 	
 	currentIdx = idx;
@@ -134,7 +149,7 @@ function showResult()
 
 function onLoad()
 {
-	for (var i=0;i<5;i++)
+	for (var i=0;i<6;i++)
 	{
 		$("#text_" + i).prop("chk_target", "#chk_" + i);
 		$("#text_" + i).click(function() {
