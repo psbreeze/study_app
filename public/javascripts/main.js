@@ -40,7 +40,7 @@ function doTest()
 
 function showItem(idx)
 {
-	if (idx == 40)
+	if (idx == 40 || exam.length == idx)
 	{
 		showResult();
 		return;
