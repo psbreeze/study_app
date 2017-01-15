@@ -23,7 +23,7 @@ class ExamController @Inject() extends Controller {
   def index = Action { implicit request => 
     {
       println("ExamController.Index: " + request)
-      var mockJson = "./app/api/exam_mock.json"
+      var mockJson = "../exam_mock.json"
       
       implicit val codec = scala.io.Codec("UTF-8")
       codec.onMalformedInput(CodingErrorAction.REPLACE)
