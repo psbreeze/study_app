@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Make Json</title>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.js" type="text/javascript"></script>
+        <script>
+function Run()
+{
+	var text = $("#raw_data").val();
+	text += "\n";
+	var lines = text.split("\n");
+	
+	var result = [];
+	var isInBlock = false;
+	var current = {};
+	
+	for (var i=0;i<lines.length;i++)
+	{
+		var ln = lines[i];
+		if (ln.length > 0)
+		{
+			if (typeof current.Question === "undefined")
+			{
+				current.Question = ln;
+			}
+			else
+			{
+				if (ln[0] == 'A')
+				{
+					var text = ln.substring("A.	".length);
+					current.A = "1";
+					current.AText = text;
+				}
+				else if (ln[0] == 'B')
+				{
+					var text = ln.substring("B.	".length);
+					current.B = "1";
+					current.BText = text;
+				}
+				else if (ln[0] == 'C')
+				{
+					var text = ln.substring("C.	".length);
+					current.C = "1";
+					current.CText = text;
+				}
+				else if (ln[0] == 'D')
+				{
+					var text = ln.substring("D.	".length);
+					current.D = "1";
+					current.DText = text;
+				}
+				else if (ln[0] == 'E')
+				{
+					var text = ln.substring("E.	".length);
+					current.E = "1";
+					current.EText = text;
+				}
+				else if (ln[0] == 'F')
+				{
+					var text = ln.substring("F.	".length);
+					current.F = "1";
+					current.FText = text;
+				}
+				else if (ln[0] == 'G')
+				{
+					var text = ln.substring("G.	".length);
+					current.G = "1";
+					current.GText = text;
+				}
+			}
+		}
+		else
+		{
+			if (typeof current.Question !== "undefined")
+			{
+				result.push(current);
+				current = {};
+			}
+		}
+	}
+	
+	$("#result_data").val(JSON.stringify(result));
+}
+        </script>
+    </head>
+    <body>
+    	<a href="https://jsonformatter.curiousconcept.com/">JSON Formatter</a><br/>
+    	<input type="button" value="Run" onclick="Run();"/>
+    	<br/>
+    	<textarea id="raw_data"></textarea>
+    	<br/>
+    	<textarea id="result_data"></textarea>
+    </body>
+</html>
